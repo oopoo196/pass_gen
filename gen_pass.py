@@ -4,16 +4,7 @@ import random
 import argparse
 
 
-def gen_pass(length=18, is_use_special_symbols=False):
-    symbols = "qwertyuiopasdfghjklzxcvbnm" \
-              "QWERTYUIOPASDFGHJKLZXCVBNM" \
-              "1234567890"
-    if is_use_special_symbols:
-        symbols += "~!@#$%^&*()+`'\";:<>/\|"
-    return "".join([random.choice(symbols) for j in range(min(length, 100))])
-
-
-if __name__ == "__main__":
+def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "-l", "--length",
@@ -30,8 +21,20 @@ if __name__ == "__main__":
         help="Is there a need to use special characters",
         action="store_true"
     )
+    return parser.parse_args()
 
-    args = parser.parse_args()
+
+def gen_pass(length=18, is_use_special_symbols=False):
+    symbols = "qwertyuiopasdfghjklzxcvbnm" \
+              "QWERTYUIOPASDFGHJKLZXCVBNM" \
+              "1234567890"
+    if is_use_special_symbols:
+        symbols += "~!@#$%^&*()+`'\";:<>/\|"
+    return "".join([random.choice(symbols) for j in range(min(length, 100))])
+
+
+if __name__ == "__main__":
+    args = parse_args()
 
     pass_len = args.length or 18
     count = min(args.count or 1, 10)
@@ -39,4 +42,3 @@ if __name__ == "__main__":
 
     for i in range(count):
         print(gen_pass(pass_len, is_spec_symbols))
-
