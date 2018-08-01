@@ -41,7 +41,7 @@ def gen_pass(length, is_use_special_symbols=False):
 if __name__ == "__main__":
     args = parse_args()
 
-    pass_len = min(args.length or 18, 100)
+    pass_len = min(args.length or 20, 100)
     count = min(args.count or 1, 15)
     is_spec_symbols = args.special
 
