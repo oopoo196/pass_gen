@@ -29,7 +29,7 @@ def gen_pass(length, is_use_special_symbols=False):
               "QWERTYUIOPASDFGHJKLZXCVBNM" \
               "1234567890"
     if is_use_special_symbols:
-        symbols += "~!@#$%^&*()+`'\";:<>/\|"
+        symbols += "~!@#$%^&*()+;:<>/\|"
     return "".join([random.choice(symbols) for j in range(length)])
 
 
