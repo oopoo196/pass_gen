@@ -38,7 +38,7 @@ if __name__ == "__main__":
 
     pass_len = args.length or 18
     count = min(args.count or 1, 15)
-    is_spec_symbols = args.special or False
+    is_spec_symbols = args.special
 
     for i in range(count):
         print(gen_pass(pass_len, is_spec_symbols))
