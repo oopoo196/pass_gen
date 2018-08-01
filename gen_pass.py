@@ -24,19 +24,19 @@ def parse_args():
     return parser.parse_args()
 
 
-def gen_pass(length=18, is_use_special_symbols=False):
+def gen_pass(length, is_use_special_symbols=False):
     symbols = "qwertyuiopasdfghjklzxcvbnm" \
               "QWERTYUIOPASDFGHJKLZXCVBNM" \
               "1234567890"
     if is_use_special_symbols:
         symbols += "~!@#$%^&*()+`'\";:<>/\|"
-    return "".join([random.choice(symbols) for j in range(min(length, 100))])
+    return "".join([random.choice(symbols) for j in range(length)])
 
 
 if __name__ == "__main__":
     args = parse_args()
 
-    pass_len = args.length or 18
+    pass_len = min(args.length or 18, 100)
     count = min(args.count or 1, 15)
     is_spec_symbols = args.special
 
