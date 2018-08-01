@@ -30,6 +30,7 @@ def parse_args():
 
 
 def gen_pass(length, is_use_special_symbols=False):
+    """"""
     symbols = "qwertyuiopasdfghjklzxcvbnm" \
               "QWERTYUIOPASDFGHJKLZXCVBNM" \
               "1234567890"
