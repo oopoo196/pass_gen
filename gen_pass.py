@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
-import random
 import argparse
+import random
 
 
 def parse_args():
