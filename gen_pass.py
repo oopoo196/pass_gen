@@ -21,6 +21,11 @@ def parse_args():
         help="Is there a need to use special characters",
         action="store_true"
     )
+    parser.add_argument(
+        "-v",
+        help="Help sting",
+        action="store_true"
+    )
     return parser.parse_args()
 
 
