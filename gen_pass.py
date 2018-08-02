@@ -35,15 +35,17 @@ def gen_pass(length, is_use_special_symbols=False):
               "1234567890"
     if is_use_special_symbols:
         symbols += "~!@#$%^&*()+;:<>/\|"
-    return "".join([random.choice(symbols) for j in range(length)])
+
+    for j in range(length):
+        print(random.choice(symbols), end="\n" if j == length - 1 else "")
 
 
 if __name__ == "__main__":
     args = parse_args()
 
-    pass_len = min(args.length or 20, 100)
-    count = min(args.count or 1, 15)
+    pass_len = args.length or 20
+    count = args.count or 1
     is_spec_symbols = args.special
 
     for i in range(count):
-        print(gen_pass(pass_len, is_spec_symbols))
+        gen_pass(pass_len, is_spec_symbols)
