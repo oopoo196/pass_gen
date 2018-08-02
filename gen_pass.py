@@ -12,7 +12,7 @@ def parse_args():
         help="The password length"
     )
     parser.add_argument(
-        "-c", "--count",
+        "-n", "--number",
         type=int,
         help="The number of passwords to generate"
     )
@@ -44,7 +44,7 @@ if __name__ == "__main__":
     args = parse_args()
 
     pass_len = args.length or 20
-    count = args.count or 1
+    count = args.number or 1
     is_spec_symbols = args.special
 
     for i in range(count):
