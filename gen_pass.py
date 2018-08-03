@@ -24,14 +24,14 @@ def parse_args():
 
 
 def gen_pass(length, is_use_special_symbols=False):
-    symbols = "qwertyuiopasdfghjklzxcvbnm" \
-              "QWERTYUIOPASDFGHJKLZXCVBNM" \
-              "1234567890"
-    if is_use_special_symbols:
-        symbols += "~!@#$%^&*()+;:<>/\|"
-
     for j in range(length):
-        print(random.choice(symbols), end="\n" if j == length - 1 else "")
+        print(
+            random.choice(
+                "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890"
+                + ("~!@#$%^&*()+;:<>/\|" if is_use_special_symbols else "")
+            ),
+            end="\n" if j == length - 1 else ""
+        )
 
 
 if __name__ == "__main__":
