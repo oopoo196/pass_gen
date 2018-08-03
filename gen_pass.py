@@ -37,8 +37,5 @@ def gen_pass(length, is_use_special_symbols=False):
 if __name__ == "__main__":
     args = parse_args()
 
-    pass_len = args.length or 20
-    count = args.number or 1
-
-    for i in range(count):
-        gen_pass(pass_len, args.special)
+    for i in range(args.number or 1):
+        gen_pass(args.length or 20, args.special)
