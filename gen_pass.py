@@ -39,7 +39,6 @@ if __name__ == "__main__":
 
     pass_len = args.length or 20
     count = args.number or 1
-    is_spec_symbols = args.special
 
     for i in range(count):
-        gen_pass(pass_len, is_spec_symbols)
+        gen_pass(pass_len, args.special)
